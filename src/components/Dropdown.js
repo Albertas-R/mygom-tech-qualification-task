@@ -9,8 +9,6 @@ function Dropdown({ title, items, multiselect = false }) {
 
   useEffect(() => {
     const handleCloseDropdown = (event) => {
-      console.log(event.target);
-
       if (!containerRef.current.contains(event.target)) {
         setIsOpen(false);
       }

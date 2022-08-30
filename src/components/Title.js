@@ -1,10 +1,11 @@
 import React from "react";
+import { LinkedinIconFa } from "./Icons";
 
 function Title(props) {
   return (
     <>
       <h1>{props.title}</h1>
-      <p>
+      <div className="title-info">
         <span>{props.author}</span>
         {` • `}
         <span>
@@ -15,8 +16,10 @@ function Title(props) {
           <span>{props.mob}</span>
         </a>
         {` • `}
-        <a href="https://www.linkedin.com/in/albertas-r/">LinkedIn</a>
-      </p>
+        <a href="https://www.linkedin.com/in/albertas-r/" target="_blank" rel="noopener noreferrer">
+          <LinkedinIconFa />
+        </a>
+      </div>
     </>
   );
 }
