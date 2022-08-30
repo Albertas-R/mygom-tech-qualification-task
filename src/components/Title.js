@@ -14,6 +14,8 @@ function Title(props) {
         <a href={`tel:${props.mob}`}>
           <span>{props.mob}</span>
         </a>
+        {` • `}
+        <a href="https://www.linkedin.com/in/albertas-r/">LinkedIn</a>
       </p>
     </>
   );
