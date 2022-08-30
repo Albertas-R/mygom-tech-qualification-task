@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { ChevronDownIconFa, ChevronUpIconFa, CheckIconFa } from "./Icons";
 
 function Dropdown({ title, items, multiselect = false }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +47,9 @@ function Dropdown({ title, items, multiselect = false }) {
       <div className="dropdown-header" onClick={() => setIsOpen((isOpen) => !isOpen)}>
         <div className="dropdown-header-title">{title}</div>
 
-        <div className="dropdown-header-action">{isOpen ? "Close" : "Open"}</div>
+        <div className="dropdown-header-action">
+          {isOpen ? <ChevronUpIconFa /> : <ChevronDownIconFa />}
+        </div>
       </div>
 
       {isOpen && (
@@ -55,7 +58,7 @@ function Dropdown({ title, items, multiselect = false }) {
             <li className="dropdown-list-item" key={item.id}>
               <button type="button" onClick={() => handleOnClick(item)}>
                 <span>{item.username}</span>
-                <span>{isItemInSelection(item) && "Selected"}</span>
+                <span>{isItemInSelection(item) && <CheckIconFa />}</span>
               </button>
             </li>
           ))}
